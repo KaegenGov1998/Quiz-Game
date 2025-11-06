@@ -16,13 +16,20 @@ let submitButton = document.querySelector("#submitAnswer");
 // CLASS FOR QUIZCARDS
 
 class quizCard {
-  constructor(question, firstOption, secondOption, thirdOption, fourthOption, correctAnswer) {
+  constructor(
+    question,
+    firstOption,
+    secondOption,
+    thirdOption,
+    fourthOption,
+    correctAnswer
+  ) {
     this.question = question;
     this.firstOption = firstOption;
     this.secondOption = secondOption;
     this.thirdOption = thirdOption;
     this.fourthOption = fourthOption;
-    this.correctAnswer = correctAnswer
+    this.correctAnswer = correctAnswer;
   }
 }
 
@@ -45,28 +52,84 @@ let obj = [
     "United Kingdom",
     "Cameroon"
   ),
-  new quizCard("How many continents are on Earth",
-     "5",
-      "6", 
-      "7", 
-      "8", 
-      "7"
-    )
+  new quizCard(
+    "What is the largest desert in the world?",
+    "Gobi Desert",
+    "Kalahari Desert",
+    "Sahara Desert",
+    "Arabian Desert",
+    "Sahara Desert"
+  ),
+  new quizCard(
+    "Which river is the longest in the world?",
+    "Amazon River",
+    "Nile River",
+    "Yangtze River",
+    "Mississippi River",
+    "Nile River"
+  ),
+  new quizCard(
+    "Mount Everest lies on the border between which two countries?",
+    "China and India",
+    "Nepal and China",
+    "India and Bhutan",
+    "Nepal and India",
+    "Nepal and China"
+  ),
+  new quizCard(
+    "Which country has the most natural lakes?",
+    "Canada",
+    "Russia",
+    "Brazil",
+    "United States",
+    "Canada"
+  ),
+  new quizCard(
+    "What is the smallest country in the world?",
+    "Monaco",
+    "San Marino",
+    "Vatican City",
+    "Liechtenstein",
+    "Vatican City"
+  ),
+  new quizCard(
+    "Which continent has the highest population?",
+    "Africa",
+    "Europe",
+    "Asia",
+    "North America",
+    "Asia"
+  ),
+  new quizCard(
+    "What ocean lies on the east coast of the United States?",
+    "Pacific Ocean",
+    "Atlantic Ocean",
+    "Indian Ocean",
+    "Arctic Ocean",
+    "Atlantic Ocean"
+  ),
+  new quizCard("How many continents are on Earth", 
+    "5", 
+    "6", 
+    "7", 
+    "8", 
+    "7"
+  ),
 ];
 
-function clickA(){
+function clickA() {
   answer = obj[i].firstOption;
 }
 
-function clickB(){
+function clickB() {
   answer = obj[i].secondOption;
 }
 
-function clickC(){
+function clickC() {
   answer = obj[i].thirdOption;
 }
 
-function clickD(){
+function clickD() {
   answer = obj[i].fourthOption;
 }
 
@@ -75,13 +138,17 @@ let i = 0;
 let count = 0;
 
 function changeQuestion() {
-  if(obj[i].correctAnswer === answer){
+  if (obj[i].correctAnswer === answer) {
     count++;
     scorer.textContent = count;
   }
-  if (i < 3) {
+  if (i < obj.length - 1) {
     i++;
     displayOutput();
+  }
+  else{
+    scorer.textContent = `${count}/10`;
+    submitButton.disabled = true;
   }
 }
 
@@ -94,6 +161,7 @@ function displayOutput() {
 }
 
 displayOutput();
+
 option[0].addEventListener("click", clickA);
 option[1].addEventListener("click", clickB);
 option[2].addEventListener("click", clickC);
