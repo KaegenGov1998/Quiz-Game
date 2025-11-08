@@ -1,7 +1,135 @@
-*{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: #436465;
+    font-size: 25px;
 }
 
-body{
+body {
+  height: 100vh;
+  background-image: linear-gradient(to right, #deb8b1, #ebded5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#geography-btn,
+#science-btn,
+#history-btn {
+  height: 600px;
+  width: 350px;
+
+  border: solid;
+  border-width: 10px;
+  border-color: #A9CDDA;
+  border-radius: 25px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-right: 50px;
+
+  color: #436465;
+  font-size: 50px;
+  font-weight: bolder;
+
+  transition-duration: 100ms;
+}
+
+#geography-btn:hover,
+#science-btn:hover,
+#history-btn:hover {
+  font-size: 55px;
+  transition-duration: 100ms;
+  border-color: #8FC5C7;
+  box-shadow: 0 10px 10px 0 gray;
+}
+
+#geography-btn {
+  background-image: url(/image/eifeltower_generated.jpg);
+}
+
+#science-btn {
+  background-image: url(/image/science-img.PNG);
+}
+
+#history-btn {
+  background-image: url(/image/history-img.jpeg);
+}
+
+#quizUI, #scoreCard {
   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: solid;
+  border-width: 10px;
+  border-color: #A9CDDA;
+  border-radius: 25px;
+
+  box-shadow: 0 10px 10px 0 gray;
+
+  height: 500px;
+  width: 500px;
+
+  background-color: #F7F2EE;
+  padding: 50px;
+
+}
+
+#option1,
+#option2,
+#option3,
+#option4 {
+  height: 100px;
+  width: 200px;
+  margin: 5px;
+  border: solid;
+  border-radius: 10px;
+  border-color: #A9CDDA;
+  background-color: #F7F2EE;
+  transition-duration: 100ms;
+}
+
+#option1:hover,
+#option2:hover,
+#option3:hover,
+#option4:hover {
+  font-size: 1.1rem;
+  box-shadow: 0 2px 2px 0 gray;
+  border-color: #8FC5C7;
+  transition-duration: 100ms;
+}
+
+#submitAnswer{
+  height: 100px;
+  width: 420px;
+  margin: 10px;
+  border: solid;
+  border-radius: 10px;
+  border-color: #8FC5C7;
+  background-color: #8FC5C7;
+  transition-duration: 200ms;
+}
+
+#submitAnswer:hover{
+  font-size: 1.2rem;
+  box-shadow: 0 5px 10px 0 gray;
+  transition-duration: 200ms;
+}
+
+#resetButton1, #resetButton2{
+  border: none;
+  height: 100px;
+  width: 80%;
+  background-color: #F7F2EE;
+  transition-duration: 100ms;
+}
+
+#resetButton1:hover,#resetButton2:hover{
+  color: #8FC5C7;
+  font-size: 1.1rem;
+  transition-duration: 100ms;
 }
