@@ -143,3 +143,25 @@ body {
   font-size: 1.1rem;
   transition-duration: 100ms;
 }
+
+@media (orientation:portrait){
+  #geography-btn,
+#science-btn,
+#history-btn {
+  height: 150px;
+  width: 250px;
+}
+
+#quizUI,
+#scoreCard{
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#submitAnswer{
+  width: 10em;
+}
+}
