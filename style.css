@@ -2,6 +2,7 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     color: #436465;
+    box-sizing: border-box;
     font-size: 25px;
 }
 
@@ -9,6 +10,8 @@ body {
   height: 100vh;
   background-image: linear-gradient(to right, #deb8b1, #ebded5);
   display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -16,7 +19,7 @@ body {
 #geography-btn,
 #science-btn,
 #history-btn {
-  height: 600px;
+  height: 60vh;
   width: 350px;
 
   border: solid;
@@ -27,7 +30,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin-right: 50px;
+  margin-right: 20px;
 
   color: #436465;
   font-size: 50px;
@@ -39,8 +42,8 @@ body {
 #geography-btn:hover,
 #science-btn:hover,
 #history-btn:hover {
-  font-size: 55px;
-  transition-duration: 100ms;
+  font-size: 2rem;
+ 
   border-color: #8FC5C7;
   box-shadow: 0 10px 10px 0 gray;
 }
@@ -65,32 +68,31 @@ body {
   align-items: center;
 
   border: solid;
-  border-width: 10px;
+  border-width: 9px;
   border-color: #A9CDDA;
   border-radius: 25px;
 
   box-shadow: 0 10px 10px 0 gray;
 
   height: 500px;
-  width: 500px;
-
+  width: 90%;
   background-color: #F7F2EE;
-  padding: 50px;
-
+  padding: 30px;
+  margin: 20px auto;
 }
 
 #option1,
 #option2,
 #option3,
 #option4 {
-  height: 100px;
-  width: 200px;
-  margin: 5px;
+  height: 80px;
+  width: 50%;
+  margin: 8px;
   border: solid;
   border-radius: 10px;
   border-color: #A9CDDA;
   background-color: #F7F2EE;
-  transition-duration: 100ms;
+  transition: all 0.2s ease-in-out;
 }
 
 #option1:hover,
@@ -100,36 +102,35 @@ body {
   font-size: 1.1rem;
   box-shadow: 0 2px 2px 0 gray;
   border-color: #8FC5C7;
-  transition-duration: 100ms;
 }
 
 #submitAnswer{
-  height: 100px;
-  width: 420px;
+  height: 80px;
+  width: 95%;
   margin: 10px;
-  border: solid;
+  border: solid 3px;
   border-radius: 10px;
   border-color: #8FC5C7;
   background-color: #8FC5C7;
-  transition-duration: 200ms;
+  transition: all 0.2s ease-in-out;
 }
 
 #submitAnswer:hover{
   font-size: 1.2rem;
   box-shadow: 0 5px 10px 0 gray;
-  transition-duration: 200ms;
+  transform: translateY(-3px);
 }
 
 #resetButton1, #resetButton2{
   border: none;
-  height: 100px;
+  height: 80px;
   width: 80%;
   background-color: #F7F2EE;
-  transition-duration: 100ms;
+  transition: all 0,2s ease-in-out;
 }
 
 #resetButton1:hover,#resetButton2:hover{
   color: #8FC5C7;
   font-size: 1.1rem;
-  transition-duration: 100ms;
 }
+
