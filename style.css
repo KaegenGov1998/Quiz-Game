@@ -6,6 +6,10 @@
   font-size: 25px;
 }
 
+h1{
+  text-align: center;
+}
+
 body {
   height: 100vh;
   background-image: linear-gradient(to right, #deb8b1, #ebded5);
@@ -14,6 +18,13 @@ body {
   padding: 20px;
   justify-content: center;
   align-items: center;
+}
+
+.progress-bar-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: end;
 }
 
 #options {
@@ -73,7 +84,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 
   border: solid;
@@ -84,7 +95,7 @@ body {
   box-shadow: 0 10px 10px 0 gray;
 
   height: auto;
-  width: 1000px;
+  width: 700px;
   background-color: #F7F2EE;
   padding: 30px;
   margin: 20px auto;
