@@ -25,6 +25,17 @@ let optionSection = document.querySelector("#options");
 let quizUISection = document.querySelector("#quizUI");
 let scoreCard = document.querySelector("#scoreCard");
 
+//progress bar
+const progressBar = document.querySelector('.progress-bar');
+
+//Live Points
+const livePoints = document.querySelector('.live-points');
+//question tracker
+let correctAnswers = [];
+let incorrectAnswers = [];
+
+
+
 // CLASS FOR QUIZCARDS
 
 class quizCard {
@@ -307,9 +318,11 @@ function changeQuestion() {
     count++;
     optionColor();
     scorer.textContent = count;
+    correctAnswers.push(i + 1);
   }
   else{
     optionColor();
+    incorrectAnswers.push(i + 1);
   }
   if (i < obj[k].length - 1) {
     i++;
@@ -329,6 +342,16 @@ function displayOutput() {
   option[3].innerHTML = obj[k][i].fourthOption;
   optionSection.style.display = "none";
   scoreCard.style.display ="none";
+  updateProgressBar();
+  timer(30);
+  updatelivePoints();
+
+
+let resultsList = document.querySelector("#resultsList");
+resultsList.innerHTML = `
+<p id='outcome'>Correct:${correctAnswers.join(", ") || "None"}</p>
+<p id='outcome'>Incorrect: ${incorrectAnswers.join(", ") || "None"}</p>
+`;
 }
 
 function displayOptions() {
@@ -432,3 +455,34 @@ resetButton2.addEventListener("click", resetQuiz);
 // DISPLAY OPTIONS TO START QUIZ
 displayOptions();
 
+// Update Progress Bar
+function updateProgressBar() {
+  const progress =document.querySelector('.progress-bar');
+  const questionNumber = i + 1; // since i is zero-based
+  progress.textContent = `Question: ${questionNumber}/10`;
+};
+
+// Update Progress Bar
+function updatelivePoints() {
+  const points =document.querySelector('.live-points');
+  const point = count; // since i is zero-based
+  points.textContent = `Question: ${point}/10`;
+};
+
+//timer
+
+function timer(duration){
+let timer=duration;
+const timerInterval= setInterval( function(){
+if (timer>0){
+timer=timer-1;
+let seconds=timer;
+timeDisplay= `00:${seconds}`;
+document.querySelector('.timer').innerHTML= timeDisplay;
+} else{
+clearInterval(timerInterval);
+changeQuestion();
+}
+}, 1000);
+
+}

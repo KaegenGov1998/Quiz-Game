@@ -133,3 +133,7 @@ body {
   font-size: 1.1rem;
   transition-duration: 100ms;
 }
+
+#outcome{
+  font-weight: bold;
+}
