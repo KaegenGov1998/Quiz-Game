@@ -31,8 +31,8 @@ const progressBar = document.querySelector('.progress-bar');
 //Live Points
 const livePoints = document.querySelector('.live-points');
 //question tracker
-let correctAnswers = [];
-let incorrectAnswers = [];
+let correctAnswers =[];
+let incorrectAnswers =[];
 
 
 
@@ -342,6 +342,7 @@ function displayOutput() {
   option[3].innerHTML = obj[k][i].fourthOption;
   optionSection.style.display = "none";
   scoreCard.style.display ="none";
+  answer = "null";
   updateProgressBar();
   timer(30);
   updatelivePoints();
@@ -466,7 +467,7 @@ function updateProgressBar() {
 function updatelivePoints() {
   const points =document.querySelector('.live-points');
   const point = count; // since i is zero-based
-  points.textContent = `Question: ${point}/10`;
+  points.textContent = `Current Score: ${point}/10`;
 };
 
 //timer
@@ -477,7 +478,7 @@ const timerInterval= setInterval( function(){
 if (timer>0){
 timer=timer-1;
 let seconds=timer;
-timeDisplay= `00:${seconds}`;
+timeDisplay= `00:${seconds.toString().padStart(2,0)}`;
 document.querySelector('.timer').innerHTML= timeDisplay;
 } else{
 clearInterval(timerInterval);
