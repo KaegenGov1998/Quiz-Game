@@ -342,7 +342,7 @@ function displayOutput() {
   scoreCard.style.display ="none";
   answer = "null";
   updateProgressBar();
-  timer(30);
+  timer(31);
   updatelivePoints();
 
 
@@ -363,6 +363,12 @@ function displayScoreCard(){
   quizUISection.style.display = "none";
   optionSection.style.display = "none";
   scoreCard.style.display ="flex";
+
+  let resultsList = document.querySelector("#resultsList");
+resultsList.innerHTML = `
+<p id='outcome'>Correct:${correctAnswers.join(", ") || "None"}</p>
+<p id='outcome'>Incorrect: ${incorrectAnswers.join(", ") || "None"}</p>
+`;
 }
 
 function clickA() {
