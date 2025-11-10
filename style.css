@@ -1,9 +1,9 @@
 * {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    color: #436465;
-    box-sizing: border-box;
-    font-size: 25px;
+  color: #436465;
+  box-sizing: border-box;
+  font-size: 25px;
 }
 
 body {
@@ -16,11 +16,19 @@ body {
   align-items: center;
 }
 
+#options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 #geography-btn,
 #science-btn,
 #history-btn {
-  height: 60vh;
-  width: 350px;
+  height: 600px;
+  width: 400px;
 
   border: solid;
   border-width: 10px;
@@ -33,7 +41,7 @@ body {
   margin-right: 20px;
 
   color: #436465;
-  font-size: 50px;
+  font-size: 1.5rem;
   font-weight: bolder;
 
   transition-duration: 100ms;
@@ -42,8 +50,8 @@ body {
 #geography-btn:hover,
 #science-btn:hover,
 #history-btn:hover {
-  font-size: 2rem;
- 
+  font-size: 2.2rem;
+
   border-color: #8FC5C7;
   box-shadow: 0 10px 10px 0 gray;
 }
@@ -60,8 +68,9 @@ body {
   background-image: url(/image/history-img.jpeg);
 }
 
-#quizUI, #scoreCard {
-  
+#quizUI,
+#scoreCard {
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -74,8 +83,8 @@ body {
 
   box-shadow: 0 10px 10px 0 gray;
 
-  height: 500px;
-  width: 90%;
+  height: auto;
+  width: 1000px;
   background-color: #F7F2EE;
   padding: 30px;
   margin: 20px auto;
@@ -86,51 +95,80 @@ body {
 #option3,
 #option4 {
   height: 80px;
-  width: 50%;
+  width: 10em;
   margin: 8px;
   border: solid;
   border-radius: 10px;
   border-color: #A9CDDA;
   background-color: #F7F2EE;
-  transition: all 0.2s ease-in-out;
+  transition-duration: 100ms;
 }
 
 #option1:hover,
 #option2:hover,
 #option3:hover,
 #option4:hover {
-  font-size: 1.1rem;
   box-shadow: 0 2px 2px 0 gray;
   border-color: #8FC5C7;
 }
 
-#submitAnswer{
+#submitAnswer {
   height: 80px;
-  width: 95%;
+  width: 21em;
   margin: 10px;
   border: solid 3px;
   border-radius: 10px;
   border-color: #8FC5C7;
   background-color: #8FC5C7;
-  transition: all 0.2s ease-in-out;
+  transition-duration: 100ms;
 }
 
-#submitAnswer:hover{
-  font-size: 1.2rem;
+#submitAnswer:hover {
   box-shadow: 0 5px 10px 0 gray;
   transform: translateY(-3px);
 }
 
-#resetButton1, #resetButton2{
+#resetButton1,
+#resetButton2 {
   border: none;
   height: 80px;
   width: 80%;
   background-color: #F7F2EE;
-  transition: all 0,2s ease-in-out;
+  transition: all 0, 2s ease-in-out;
 }
 
-#resetButton1:hover,#resetButton2:hover{
+#resetButton1:hover,
+#resetButton2:hover {
   color: #8FC5C7;
   font-size: 1.1rem;
 }
 
+
+@media screen and (max-width: 600px) {
+
+  #geography-btn,
+  #science-btn,
+  #history-btn {
+    width: 80%;
+    height: 200px;
+    color: #334b4c;
+  }
+
+  #quizUI,
+  #scoreCard {
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+  #options-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #submitAnswer {
+    width: 10em;
+  }
+}
