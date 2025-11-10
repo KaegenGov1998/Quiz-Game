@@ -8,6 +8,7 @@
 
 h1{
   text-align: center;
+  font-weight: lighter;
 }
 
 body {
@@ -22,9 +23,34 @@ body {
 
 .progress-bar-container{
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  justify-content: space-around;
-  align-items: end;
+  justify-content: space-between;
+  gap: 10px;
+
+}
+
+.progress-bar{
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.timer{
+  border: solid;
+  border-radius: 20px;
+  background-color: #8FC5C7;
+  color: #F7F2EE;
+  padding: 10px;
+  text-align: center;
+}
+
+.live-points{
+  padding: 10px;
+  color: #88b0b0;
 }
 
 #options {
@@ -61,7 +87,7 @@ body {
 #geography-btn:hover,
 #science-btn:hover,
 #history-btn:hover {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
 
   border-color: #8FC5C7;
   box-shadow: 0 10px 10px 0 gray;
@@ -129,6 +155,7 @@ body {
   margin: 10px;
   border: solid 3px;
   border-radius: 10px;
+  color: #F7F2EE;
   border-color: #8FC5C7;
   background-color: #8FC5C7;
   transition-duration: 100ms;
@@ -159,7 +186,7 @@ body {
   #geography-btn,
 #science-btn,
 #history-btn {
-  height: 150px;
+  height: 250px;
   width: 250px;
 }
 
@@ -174,5 +201,9 @@ body {
 
 #submitAnswer{
   width: 10em;
+}
+
+.progress-bar-container{
+  flex-direction: column;
 }
 }

@@ -476,14 +476,14 @@ displayOptions();
 function updateProgressBar() {
   const progress =document.querySelector('.progress-bar');
   const questionNumber = i + 1; // since i is zero-based
-  progress.textContent = `Question: ${questionNumber}/10`;
+  progress.textContent = `Question ${questionNumber}`;
 };
 
 // UPDATE LIVE POINTS
 function updatelivePoints() {
   const points =document.querySelector('.live-points');
   const point = count; // since i is zero-based
-  points.textContent = `Current Score: ${point}/10`;
+  points.textContent = `Score: ${point}/10`;
 };
 
 // TIMER FUNCTION
