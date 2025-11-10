@@ -25,14 +25,12 @@ let optionSection = document.querySelector("#options");
 let quizUISection = document.querySelector("#quizUI");
 let scoreCard = document.querySelector("#scoreCard");
 
-//progress bar
-const progressBar = document.querySelector('.progress-bar');
-
-//Live Points
-const livePoints = document.querySelector('.live-points');
-//question tracker
 let correctAnswers =[];
 let incorrectAnswers =[];
+let timerInterval;
+
+const progressBar = document.querySelector('.progress-bar');
+const livePoints = document.querySelector('.live-points');
 
 
 
@@ -331,7 +329,7 @@ function changeQuestion() {
     scorer.textContent = `${count}/10`;
     submitButton.disabled = true;
     displayScoreCard();
-  }
+  };
 }
 
 function displayOutput() {
@@ -401,6 +399,9 @@ function selectGeo() {
   optionSection.style.display = "none";
   quizUISection.style.display = "flex";
   scoreCard.style.display ="none"
+  correctAnswers =[];
+  incorrectAnswers =[];
+
 }
 
 function selectSci() {
@@ -412,7 +413,10 @@ function selectSci() {
   submitButton.disabled = false;
   optionSection.style.display = "none";
   quizUISection.style.display = "flex";
-  scoreCard.style.display ="none"
+  scoreCard.style.display ="none";
+  correctAnswers =[];
+  incorrectAnswers =[];
+
 }
 
 function selectHis() {
@@ -424,7 +428,10 @@ function selectHis() {
   submitButton.disabled = false;
   optionSection.style.display = "none";
   quizUISection.style.display = "flex";
-  scoreCard.style.display ="none"
+  scoreCard.style.display ="none";
+  correctAnswers =[];
+  incorrectAnswers =[];
+
 }
 
 function resetQuiz() {
@@ -436,6 +443,9 @@ function resetQuiz() {
   quizUISection.style.display = "none";
   optionSection.style.display = "flex";
   scoreCard.style.display ="none";
+  correctAnswers =[];
+  incorrectAnswers =[];
+
 }
 
 //EVENT LISTENERS TO PROGRAM BUTTONS
@@ -456,25 +466,26 @@ resetButton2.addEventListener("click", resetQuiz);
 // DISPLAY OPTIONS TO START QUIZ
 displayOptions();
 
-// Update Progress Bar
+// UPDATE PROGRESS BAR
 function updateProgressBar() {
   const progress =document.querySelector('.progress-bar');
   const questionNumber = i + 1; // since i is zero-based
   progress.textContent = `Question: ${questionNumber}/10`;
 };
 
-// Update Progress Bar
+// UPDATE LIVE POINTS
 function updatelivePoints() {
   const points =document.querySelector('.live-points');
   const point = count; // since i is zero-based
   points.textContent = `Current Score: ${point}/10`;
 };
 
-//timer
+// TIMER FUNCTION
 
 function timer(duration){
+clearInterval(timerInterval);
 let timer=duration;
-const timerInterval= setInterval( function(){
+timerInterval= setInterval( function(){
 if (timer>0){
 timer=timer-1;
 let seconds=timer;
